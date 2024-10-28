@@ -14,14 +14,16 @@
   </ion-header>
 
   <div class="ion-padding">
+    <h3>Focus Trap Overlays</h3>
     <ion-button expand="block" id="open-action-sheet">Open Action Sheet</ion-button>
     <ion-button expand="block" id="open-alert">Open Alert</ion-button>
     <ion-button expand="block" id="open-loading" color="danger">Open Loading</ion-button>
+    <ion-button expand="block" id="open-picker">Open Legacy Picker</ion-button>
+
+    <h3>Other Overlays</h3>
     <ion-button expand="block" id="open-modal">Open Modal</ion-button>
     <ion-button expand="block" id="open-popover">Open Popover</ion-button>
     <ion-button expand="block" id="open-toast">Open Toast</ion-button>
-
-    <ion-toast trigger="open-toast" message="This toast will disappear after 5 seconds" [duration]="5000"></ion-toast>
 
     <ion-list>
       <ion-item>
@@ -46,7 +48,6 @@
         </ion-select>
       </ion-item>
     </ion-list>
-
   </div>
 
   <ion-action-sheet trigger="open-action-sheet" header="Actions" [buttons]="actionSheetButtons"></ion-action-sheet>
@@ -94,5 +95,7 @@
     </ng-template>
   </ion-popover>
 
+  <ion-picker-legacy trigger="open-picker" [columns]="pickerColumns" [buttons]="pickerButtons"></ion-picker-legacy>
 
+  <ion-toast trigger="open-toast" message="This toast will disappear after 5 seconds" [duration]="5000"></ion-toast>
 </ion-content>

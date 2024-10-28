@@ -34,6 +34,43 @@ export class HomePage {
 
   alertButtons = ['Action'];
 
+  public pickerColumns = [
+    {
+      name: 'languages',
+      options: [
+        {
+          text: 'JavaScript',
+          value: 'javascript',
+        },
+        {
+          text: 'TypeScript',
+          value: 'typescript',
+        },
+        {
+          text: 'Rust',
+          value: 'rust',
+        },
+        {
+          text: 'C#',
+          value: 'c#',
+        },
+      ],
+    },
+  ];
+
+  public pickerButtons = [
+    {
+      text: 'Cancel',
+      role: 'cancel',
+    },
+    {
+      text: 'Confirm',
+      handler: (value: any) => {
+        console.log(`You selected: ${value.languages.value}`);
+      },
+    },
+  ];
+
   name!: string;
 
   cancel() {
@@ -43,5 +80,4 @@ export class HomePage {
   confirm() {
     this.modal.dismiss(this.name, 'confirm');
   }
-
 }
